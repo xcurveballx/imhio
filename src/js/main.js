@@ -1,3 +1,11 @@
-import MailChecker from './MailChecker.js';
+"use strict";
 
-const API_KEY = '222537cad765d0ba4fed55c99ec5f371';
+import CONFIG from './config';
+import ViewUpdater from './ViewUpdater';
+import DomReady from './DomReady';
+import MailChecker from './MailChecker';
+
+DomReady()
+    .then(res => {
+        new MailChecker(CONFIG, ViewUpdater);
+    });

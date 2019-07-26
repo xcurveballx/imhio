@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="dst/css/main.css">
     </head>
     <body>
-        <header class="container-fluid text-white border-bottom border-warning">
+        <header class="container-fluid text-white border-bottom border-warning shadow-sm">
             <div class="row">
                 <div class="col-12 text-center px-2 py-5 bg-primary">
                     <h1 class="display-3">Email validation service</h1>
@@ -20,18 +20,27 @@
         <main class="container">
             <div class="row">
                 <div class="col-sm-12 py-5">
-                    <form>
+                    <p>
+                        In order to check whether the given email is valid according to RFC 5322, 5321 and 3696, use this form. All the results will be output below the input field.
+                    </p>
+                    <form id="EmailChecker">
                         <!-- Prevent implicit submission of the form -->
                         <button type="submit" disabled class="d-none" aria-hidden="true"></button>
+                        <div class="alert alert-danger d-none" role="alert">
+                            <button type="button" class="close" aria-label="Close" onclick="this.parentNode.classList.add('d-none');">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <span></span>
+                        </div>
                         <div class="form-group">
                             <label for="InputEmail">Email address</label>
-                            <input type="email" class="form-control is-invalid is-valid" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email to check">
-                            <div class="valid-feedback">Looks good!</div>
-                            <div class="invalid-feedback">Please, enter a valid email.</div>
+                            <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email to check">
+                            <div class="valid-feedback d-none"></div>
+                            <div class="invalid-feedback d-none"></div>
                         </div>
-                        <button type="button" class="btn btn-primary" disabled>
-                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                            Checking...
+                        <button type="button" class="btn btn-primary">
+                            <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                            <span>Check</span>
                         </button>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </form>

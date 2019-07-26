@@ -1,11 +1,11 @@
 {
-  "name": "Imhio test task",
+  "name": "Imhio",
   "version": "0.0.1",
   "description": "Test task for Software Developer position with Imhio",
-  "main": "src/js/MailChecker.js",
+  "main": "src/js/main.js",
   "scripts": {
-    "test": "mocha --timeout 10000 MailChecker.test.js || true",
-    "doc": "jsdoc src/js/MailChecker.js -c ./node_modules/ink-docstrap/template/jsdoc.conf.json  -t ./node_modules/ink-docstrap/template -d ./docs -R README.md",
+    "test": "mocha --timeout 20000 MailChecker.test.js || true",
+    "doc": "jsdoc src/js/ -r -c ./node_modules/ink-docstrap/template/jsdoc.conf.json  -t ./node_modules/ink-docstrap/template -d ./docs -R README.md",
     "preversion": "npm test",
     "version": "npm run doc && git add -A",
     "postversion": "git push && git push --tags"
