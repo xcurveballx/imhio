@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Imhio - test task</title>
+        <meta name="description" content="Imhio - test task">
+        <meta name="author" content="xcurveballx">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="dst/css/main.css">
+    </head>
+    <body>
+        <header class="container-fluid text-white border-bottom border-warning">
+            <div class="row">
+                <div class="col-12 text-center px-2 py-5 bg-primary">
+                    <h1 class="display-3">Email validation service</h1>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <div class="row">
+                <div class="col-sm-12 py-5">
+                    <form>
+                        <!-- Prevent implicit submission of the form -->
+                        <button type="submit" disabled class="d-none" aria-hidden="true"></button>
+                        <div class="form-group">
+                            <label for="InputEmail">Email address</label>
+                            <input type="email" class="form-control is-invalid is-valid" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email to check">
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please, enter a valid email.</div>
+                        </div>
+                        <button type="button" class="btn btn-primary">Check</button>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer class="container-fluid text-white font-weight-light">
+            <div class="row">
+                <div class="col-12 text-center px-2 py-5 bg-primary">
+                    Available under the MIT license. Author - <a class="text-white" href="https://github.com/xcurveballx" target="_blank">curveball</a> (©).
+                </div>
+            </div>
+        </footer>
+        <script src="dst/js/main.js"></script>
+    </body>
+</html>
