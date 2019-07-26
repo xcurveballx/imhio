@@ -1,6 +1,6 @@
 {
   "name": "Imhio",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Test task for Software Developer position with Imhio",
   "main": "src/js/main.js",
   "scripts": {
