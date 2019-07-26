@@ -31,6 +31,7 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
   return browserify(folders.src + 'js/main.js')
+	  .transform()
     .bundle()
     .pipe(source('main.js'))
     .pipe(buffer())
