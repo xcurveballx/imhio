@@ -1,7 +1,7 @@
 export default class ViewUpdater {
     /**
      * @constructs ViewUpdater
-	   * @description ViewUpdater is responsible for updating the page
+	 * @description ViewUpdater is responsible for updating the page
      * according to the result of the request. Sets up all the page elements.
      * @param {string} [rootId=EmailChecker] id of the form
      */
@@ -11,10 +11,10 @@ export default class ViewUpdater {
         this.btn = this.root.getElementsByTagName('button')[2],
         this.btnSpinner = this.btn.getElementsByTagName('span')[0],
         this.btnTxt = this.btn.getElementsByTagName('span')[1];
-        this.alert = this.root.getElementsByTagName('div')[0];
+        this.alert = this.root.getElementsByTagName('section')[0];
         this.alertMsg = this.alert.getElementsByTagName('span')[1];
-        this.posFeedback = this.root.getElementsByTagName('div')[2];
-        this.negFeedback = this.root.getElementsByTagName('div')[3];
+        this.posFeedback = this.root.getElementsByTagName('div')[0];
+        this.negFeedback = this.root.getElementsByTagName('div')[1];
     }
 
     /**
@@ -25,13 +25,13 @@ export default class ViewUpdater {
      * @returns {void}
      */
     initial() {
-        this.alert.classList.add("d-none");
-        this.btnSpinner.classList.add("d-none");
+        this.alert.classList.add('d-none');
+        this.btnSpinner.classList.add('d-none');
         this.btnTxt.textContent = 'Check';
-        this.btn.removeAttribute("disabled", "disabled");
-        this.posFeedback.classList.add("d-none");
-        this.negFeedback.classList.add("d-none");
-        this.input.removeAttribute("disabled", "disabled");
+        this.btn.removeAttribute('disabled', 'disabled');
+        this.posFeedback.classList.add('d-none');
+        this.negFeedback.classList.add('d-none');
+        this.input.removeAttribute('disabled', 'disabled');
         this.input.classList.remove('is-invalid', 'is-valid');
         //this.input.value = '';
     }
@@ -45,10 +45,10 @@ export default class ViewUpdater {
      */
     loading() {
         this.initial();
-        this.btnSpinner.classList.remove("d-none");
+        this.btnSpinner.classList.remove('d-none');
         this.btnTxt.textContent = 'Checking...';
-        this.btn.setAttribute("disabled", "disabled");
-        this.input.setAttribute("disabled", "disabled");
+        this.btn.setAttribute('disabled', 'disabled');
+        this.input.setAttribute('disabled', 'disabled');
     }
 
     /**
@@ -60,11 +60,11 @@ export default class ViewUpdater {
      * @param {object} data service API response.
      * @returns {void}
      */
-    success(msg, data) {
+    success(msg = '', data = '') {
         this.initial();
         this.input.classList.add('is-valid');
         this.posFeedback.innerHTML = `<pre>${msg} \n ${JSON.stringify(data, null, 4)}</pre>`;
-        this.posFeedback.classList.remove("d-none");
+        this.posFeedback.classList.remove('d-none');
     }
 
     /**
@@ -76,11 +76,11 @@ export default class ViewUpdater {
      * @param {object} data service API response.
      * @returns {void}
      */
-    failure(msg, data) {
+    failure(msg = '', data = '') {
         this.initial();
         this.input.classList.add('is-invalid');
         this.negFeedback.innerHTML = `<pre>${msg} \n ${JSON.stringify(data, null, 4)}</pre>`;
-        this.negFeedback.classList.remove("d-none");
+        this.negFeedback.classList.remove('d-none');
     }
 
     /**
@@ -91,9 +91,9 @@ export default class ViewUpdater {
      * @param {Error} error an error object.
      * @returns {void}
      */
-    error(error) {
+    error(error = {}) {
         this.initial();
-        this.alert.classList.remove("d-none");
+        this.alert.classList.remove('d-none');
         this.alertMsg.textContent = `${error.name}: ${error.message}`;
     }
 };

@@ -1,5 +1,4 @@
-"use strict";
-
+import '../scss/index.scss';
 import CONFIG from './config';
 import ViewUpdater from './ViewUpdater';
 import DomReady from './DomReady';

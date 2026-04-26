@@ -5,55 +5,55 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Imhio - test task</title>
         <meta name="description" content="Imhio - test task">
-        <meta name="author" content="xcurveballx">
+        <meta name="author" content="curveball">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="dst/css/main.css">
+        <link rel="stylesheet" href="dist/index.css">
     </head>
     <body>
         <header class="container-fluid text-white border-bottom border-warning shadow-sm">
-            <div class="row">
-                <div class="col-12 text-center px-2 py-5 bg-primary">
+            <section class="row">
+                <section class="col-12 text-center px-2 py-5 bg-primary">
                     <h1 class="display-3">Email validation service</h1>
-                </div>
-            </div>
+                </section>
+            </section>
         </header>
         <main class="container">
-            <div class="row">
-                <div class="col-sm-12 py-5">
+            <section class="row">
+                <section class="col-sm-12 py-5">
                     <p>
                         In order to check whether the given email is valid according to RFC 5322, 5321 and 3696, use this form. All the results will be output below the input field.
                     </p>
                     <form id="EmailChecker">
                         <!-- Prevent implicit submission of the form -->
                         <button type="submit" disabled class="d-none" aria-hidden="true"></button>
-                        <div class="alert alert-danger d-none" role="alert">
+                        <section class="alert alert-danger d-none" role="alert">
                             <button type="button" class="close" aria-label="Close" onclick="this.parentNode.classList.add('d-none');">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                             <span></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="InputEmail">Email address</label>
+                        </section>
+                        <section class="form-group mb-3">
+                            <label for="InputEmail">Email address:</label>
                             <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email to check">
                             <div class="valid-feedback d-none"></div>
                             <div class="invalid-feedback d-none"></div>
-                        </div>
+                        </section>
                         <button type="button" class="btn btn-primary">
                             <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
                             <span>Check</span>
                         </button>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </form>
-                </div>
-            </div>
+                </section>
+            </section>
         </main>
         <footer class="container-fluid text-white font-weight-light">
-            <div class="row">
-                <div class="col-12 text-center px-2 py-5 bg-primary">
+            <section class="row">
+                <section class="col-12 text-center px-2 py-5 bg-primary">
                     Available under the MIT license. Author - <a class="text-white" href="https://github.com/xcurveballx" target="_blank">curveball</a> (©).
-                </div>
-            </div>
+                </section>
+            </section>
         </footer>
-        <script src="dst/js/main.js"></script>
+        <script src="dist/index.js" defer></script>
     </body>
 </html>
